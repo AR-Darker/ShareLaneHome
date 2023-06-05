@@ -140,7 +140,8 @@ public void zipCodeShouldNotAcceptAnyLetters() {
         driver.quit();
     }
 
-    @Test(description = "NegativTest" + "ввожу 99999.....9999999999999999999 это нереальное значение")
+    @Test(description = "NegativTest" + "ввожу 99999.....9999999999999999999 это нереальное значение" +
+            "почему не запускаются нижние классы")
     public void zipCodeShouldNotImpossible(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -170,9 +171,7 @@ public void zipCodeShouldNotAcceptAnyLetters() {
 
         driver.quit();
     }
-
-    public class ZipCodeShouldNotAcceptNegativ5Digits {
-        @Test(description = "NegativTest" + "Это ведь 6 символов тоже, но по тест-дизайну так надо")
+     @Test(description = "NegativTest" + "Это ведь 6 символов тоже, но по тест-дизайну так надо")
         public void zipCodeShouldNotAcceptNegativ5Digits(){
 
             System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -192,9 +191,11 @@ public void zipCodeShouldNotAcceptAnyLetters() {
                     "ErrorMessage is notcorrect or system accepted data");
 
             driver.quit();
-        }
 
-    }    public void zipCodeShouldNotAcceptSpecSymbols(){
+
+    }
+    @Test
+    public void zipCodeShouldNotAcceptSpecSymbols(){
 
     System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
