@@ -1,3 +1,5 @@
+package ZipCodeTesting;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,10 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ExampleTest {
-
-    @Test
-    public void zipCodeShouldNotAccept4DigitsTest(){
+public class ZipCodeShouldNotAcceptEmptyField {
+    @Test(description = "NegativTest")
+    public void zipCodeShouldNotAcceptEmptyField(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
@@ -16,23 +17,19 @@ public class ExampleTest {
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
 
         WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
-        zipCodeInput.sendKeys("1234");
+        zipCodeInput.sendKeys("");
 
         WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
         continueButton.click();
 
-        WebElement errorMessage = driver.findElement((By.cssSelector("[class='error_message']")));
-        boolean isDisplayed = errorMessage.isDisplayed();
-
         String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
 
-        Assert.assertTrue(isDisplayed, "Текст errormessage НеПолучен");
-
         Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
-                "ErrorMessage is notcorrect");
+                "ErrorMessage is notcorrect or system accepted data");
 
         driver.quit();
     }
+
 }
 
 

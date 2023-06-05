@@ -1,3 +1,5 @@
+package ZipCodeTesting;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,10 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ExampleTest {
+public class ZipCodeShouldNotAccept4Digits {
 
     @Test
-    public void zipCodeShouldNotAccept4DigitsTest(){
+    public void zipCodeShouldNotAccept4Digits(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
@@ -21,18 +23,12 @@ public class ExampleTest {
         WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
         continueButton.click();
 
-        WebElement errorMessage = driver.findElement((By.cssSelector("[class='error_message']")));
-        boolean isDisplayed = errorMessage.isDisplayed();
-
         String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
 
-        Assert.assertTrue(isDisplayed, "Текст errormessage НеПолучен");
-
         Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
-                "ErrorMessage is notcorrect");
+                "ErrorMessage is notcorrect or system accepted data");
 
         driver.quit();
     }
+
 }
-
-
