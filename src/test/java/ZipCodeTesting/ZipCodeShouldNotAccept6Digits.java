@@ -12,7 +12,8 @@ public class ZipCodeShouldNotAccept6Digits {
     @Test(description = "NegativTest" + " чтобы не забыть, а как я должен прописать негативный тест???" +
             "а как все запустить из 1 класса, у меня ведь не объектов класса" +
             "я не согласен на использование русского, т.к для машины это то же самое что и английский" +
-            "система ругается на названия, в чем косяк?:)")
+            "система ругается на названия, в чем косяк?:)" +
+            "куда писать git rm или git log, их аналоги я то нашел, но...")
     public void zipCodeShouldNotAccept6Digits(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
