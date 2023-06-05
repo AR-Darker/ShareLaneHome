@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class ZipCodeShouldNotAcceptAnyLetters {
 
     @Test(description = "NegativTest")
-    public void ZipCodeShouldNotAcceptAnyLetters() {
+    public void zipCodeShouldNotAcceptAnyLetters() {
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
