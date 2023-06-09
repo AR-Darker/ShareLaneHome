@@ -12,7 +12,7 @@ public class BaseTest {
 
     WebDriver driver;
 
-    String BASE_URL = "https://www.sharelane.com/cgi-bin/main.py";
+    String BASE_URL = "https://www.sharelane.com/cgi-bin/register.py";
 
 
     @BeforeMethod
@@ -30,6 +30,7 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(){
+        driver.close();
         driver.quit();
     }
 }

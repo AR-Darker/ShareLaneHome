@@ -7,20 +7,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UltraTest extends BaseTest {
+public class ShareLaneZipCodeTests extends BaseTest {
+    String ZipCodeLocator = "zip_code";
+    String ContinueButtonLocator = "[value=Continue]";
+    String ErrorMessageLocator = "[class='error_message']";
 
     @Test(description = "ввожу 12345")
-    public void zipCodeShouldAccept5Digit(){
+    public void zipCodeShouldAccept5Digits(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
+        driver.get(BASE_URL);
 
-        WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+        WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
         zipCodeInput.sendKeys("12345");
 
-        WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+        WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
         continueButton.click();
 
         WebElement FirstNameChecking = driver.findElement(By.name("first_name"));
@@ -37,15 +40,15 @@ public void zipCodeShouldNotAccept4Digits(){
     System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
     WebDriver driver = new ChromeDriver();
-    driver.get("https://www.sharelane.com/cgi-bin/register.py");
+    driver.get(BASE_URL);
 
-    WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+    WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
     zipCodeInput.sendKeys("1234");
 
-    WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+    WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
     continueButton.click();
 
-    String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+    String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
     Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
             "ErrorMessage is notcorrect or system accepted data");
@@ -59,15 +62,15 @@ public void zipCodeShouldNotAccept6Digits(){
     System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
     WebDriver driver = new ChromeDriver();
-    driver.get("https://www.sharelane.com/cgi-bin/register.py");
+    driver.get(BASE_URL);
 
-    WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+    WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
     zipCodeInput.sendKeys("123456");
 
-    WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+    WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
     continueButton.click();
 
-    String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+    String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
     Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
             "ErrorMessage is notcorrect or system accepted data");
@@ -81,15 +84,15 @@ public void zipCodeShouldNotAcceptAnyLetters() {
     System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
     WebDriver driver = new ChromeDriver();
-    driver.get("https://www.sharelane.com/cgi-bin/register.py");
+    driver.get(BASE_URL);
 
-    WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+    WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
     zipCodeInput.sendKeys("abcde");
 
-    WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+    WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
     continueButton.click();
 
-    String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+    String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
     Assert.assertEquals(errorMessageForEquals, "Oops, error on page. ZIP code should have 5 digits",
             "ErrorMessage is notcorrect or system accepted data");
@@ -102,15 +105,15 @@ public void zipCodeShouldNotAcceptAnyLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
+        driver.get(BASE_URL);
 
-        WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+        WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
         zipCodeInput.sendKeys("");
 
-        WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+        WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
         continueButton.click();
 
-        String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+        String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
         Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
                 "ErrorMessage is notcorrect or system accepted data");
@@ -124,15 +127,15 @@ public void zipCodeShouldNotAcceptAnyLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
+        driver.get(BASE_URL);
 
-        WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+        WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
         zipCodeInput.sendKeys("12.345");
 
-        WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+        WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
         continueButton.click();
 
-        String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+        String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
         Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
                 "ErrorMessage is notcorrect or system accepted data");
@@ -147,9 +150,9 @@ public void zipCodeShouldNotAcceptAnyLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
+        driver.get(BASE_URL);
 
-        WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+        WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
         zipCodeInput.sendKeys("9999999999999999999999999999999999999999999999999999999999999" +
                 "9999999999" +
                 "99999999999999999999999999999999999999999999999999999999999999999" +
@@ -161,10 +164,10 @@ public void zipCodeShouldNotAcceptAnyLetters() {
                 "99999999999999999999999999999999999999999999999999999999999999" +
                 "999999999999999999999999999999999999999999999999999999999999");
 
-        WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+        WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
         continueButton.click();
 
-        String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+        String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
         Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
                 "ErrorMessage is notcorrect or system accepted data");
@@ -177,15 +180,15 @@ public void zipCodeShouldNotAcceptAnyLetters() {
             System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
             WebDriver driver = new ChromeDriver();
-            driver.get("https://www.sharelane.com/cgi-bin/register.py");
+            driver.get(BASE_URL);
 
-            WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+            WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
             zipCodeInput.sendKeys("-12345");
 
-            WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+            WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
             continueButton.click();
 
-            String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+            String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
             Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
                     "ErrorMessage is notcorrect or system accepted data");
@@ -200,15 +203,15 @@ public void zipCodeShouldNotAcceptAnyLetters() {
     System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
     WebDriver driver = new ChromeDriver();
-    driver.get("https://www.sharelane.com/cgi-bin/register.py");
+    driver.get(BASE_URL);
 
-    WebElement zipCodeInput = driver.findElement(By.name("zip_code"));
+    WebElement zipCodeInput = driver.findElement(By.name(ZipCodeLocator));
     zipCodeInput.sendKeys("!@#$%");
 
-    WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
+    WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
     continueButton.click();
 
-    String errorMessageForEquals = driver.findElement(By.cssSelector("[class='error_message']")).getText();
+    String errorMessageForEquals = driver.findElement(By.cssSelector(ErrorMessageLocator)).getText();
 
     Assert.assertEquals(errorMessageForEquals,"Oops, error on page. ZIP code should have 5 digits",
             "ErrorMessage is notcorrect or system accepted data");
