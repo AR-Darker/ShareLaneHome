@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UltraTest {
+public class UltraTest extends BaseTest {
 
     @Test(description = "ввожу 12345")
     public void zipCodeShouldAccept5Digits(){
