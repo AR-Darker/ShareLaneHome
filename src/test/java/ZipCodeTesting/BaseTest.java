@@ -24,7 +24,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //    options.addArguments("--start-maximized");
 //    options.addArguments("-incognito");
-//    driver = new ChromeDriver(options);
+//    driver = new ChromeDriver(options;
 
     }
 

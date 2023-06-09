@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class UltraTest extends BaseTest {
 
     @Test(description = "ввожу 12345")
-    public void zipCodeShouldAccept5Digits(){
+    public void zipCodeShouldAccept5Digit(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
