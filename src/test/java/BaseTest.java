@@ -1,5 +1,3 @@
-package ZipCodeTesting;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +15,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void SetUpWindow(){
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 //    ChromeOptions options = new ChromeOptions();

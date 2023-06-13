@@ -1,5 +1,3 @@
-package ZipCodeTesting;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +13,7 @@ public class ShareLaneZipCodeTests extends BaseTest {
     @Test(description = "ввожу 12345")
     public void zipCodeShouldAccept5Digits(){
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
         WebDriver driver = new ChromeDriver();
         driver.get(BASE_URL);
@@ -37,7 +35,7 @@ public class ShareLaneZipCodeTests extends BaseTest {
 @Test
 public void zipCodeShouldNotAccept4Digits(){
 
-    System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
     WebDriver driver = new ChromeDriver();
     driver.get(BASE_URL);
@@ -59,7 +57,7 @@ public void zipCodeShouldNotAccept4Digits(){
     @Test(description = "NegativTest")
 public void zipCodeShouldNotAccept6Digits(){
 
-    System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
     WebDriver driver = new ChromeDriver();
     driver.get(BASE_URL);
@@ -81,7 +79,7 @@ public void zipCodeShouldNotAccept6Digits(){
     @Test(description = "NegativTest")
 public void zipCodeShouldNotAcceptAnyLetters() {
 
-    System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
     WebDriver driver = new ChromeDriver();
     driver.get(BASE_URL);
@@ -102,7 +100,7 @@ public void zipCodeShouldNotAcceptAnyLetters() {
     @Test(description = "NegativTest")
     public void zipCodeShouldNotAcceptEmptyField(){
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
         WebDriver driver = new ChromeDriver();
         driver.get(BASE_URL);
@@ -124,7 +122,7 @@ public void zipCodeShouldNotAcceptAnyLetters() {
     @Test(description = "NegativTest")
     public void zipCodeShouldNotAcceptFloat(){
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
         WebDriver driver = new ChromeDriver();
         driver.get(BASE_URL);
@@ -147,7 +145,7 @@ public void zipCodeShouldNotAcceptAnyLetters() {
             "почему не запускаются нижние классы")
     public void zipCodeShouldNotImpossible(){
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
         WebDriver driver = new ChromeDriver();
         driver.get(BASE_URL);
@@ -162,7 +160,8 @@ public void zipCodeShouldNotAcceptAnyLetters() {
                 "9999999999999999999999999999999999999999999999999999999999999999" +
                 "999999999999999999999999999999999999999999999999999999999999999" +
                 "99999999999999999999999999999999999999999999999999999999999999" +
-                "999999999999999999999999999999999999999999999999999999999999");
+                "9999999999999999999999999999999999999999999999999999999999" +
+                "9999999999999999999999999999999999999999999999999999999999999");
 
         WebElement continueButton = driver.findElement(By.cssSelector(ContinueButtonLocator));
         continueButton.click();
@@ -177,7 +176,7 @@ public void zipCodeShouldNotAcceptAnyLetters() {
      @Test(description = "NegativTest" + "Это ведь 6 символов тоже, но по тест-дизайну так надо")
         public void zipCodeShouldNotAcceptNegativ5Digits(){
 
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
             WebDriver driver = new ChromeDriver();
             driver.get(BASE_URL);
@@ -200,7 +199,7 @@ public void zipCodeShouldNotAcceptAnyLetters() {
     @Test
     public void zipCodeShouldNotAcceptSpecSymbols(){
 
-    System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
 
     WebDriver driver = new ChromeDriver();
     driver.get(BASE_URL);
