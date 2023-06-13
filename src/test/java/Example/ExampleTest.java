@@ -8,6 +8,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ExampleTest {
+    //    ChromeOptions options = new ChromeOptions();
+    //    options.addArguments("--start-maximized");
+//    options.addArguments("-incognito");
+//    driver = new ChromeDriver(options);
+
 
     @Test
     public void zipCodeShouldNotAccept4DigitsTest(){

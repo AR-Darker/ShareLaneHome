@@ -18,12 +18,8 @@ public class BrowserSettings {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-//    ChromeOptions options = new ChromeOptions();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//    options.addArguments("--start-maximized");
-//    options.addArguments("-incognito");
-//    driver = new ChromeDriver(options;
 
     }
 
