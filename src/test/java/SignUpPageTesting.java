@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ShareLaneSignUpTest extends BaseTest {
+public class SignUpPageTesting extends BrowserSettings {
 
     String FirstNameFieldLocator = "first_name";
     String LastNameFieldLocator = "last_name";

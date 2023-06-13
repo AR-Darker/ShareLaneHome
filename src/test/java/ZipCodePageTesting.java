@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ShareLaneZipCodeTests extends BaseTest {
+public class ZipCodePageTesting extends BrowserSettings {
     String ZipCodeLocator = "zip_code";
     String ContinueButtonLocator = "[value=Continue]";
     String ErrorMessageLocator = "[class='error_message']";
